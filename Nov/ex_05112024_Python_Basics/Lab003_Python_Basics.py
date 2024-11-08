@@ -1,0 +1,5 @@
+print("Hello Welcome")
+print("Roopa")
+print("hello", "John", "Ken",sep='=')
+print("hello", "John", "Ken",sep='=',end='_')
+print("hello", "John", "Ken",sep='=')
