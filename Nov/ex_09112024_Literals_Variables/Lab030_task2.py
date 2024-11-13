@@ -4,14 +4,18 @@
 num1=input("Enter the first number -num1: ")
 num2=input("Enter the second  number -num2 :")
 num3=input("Enter the third number-num3 :")
-num1=int(num1)
-num2=int(num2)
-num3=int(num3)
+num1=float(num1)
+num2=float(num2)
+num3=float(num3)
 #-Add 3 numbers
-print(num1+num2+num3)
+add_result=num1+num2+num3
+print(add_result)
 # Subtraction
-print(num1-num2-num3)
+sub_result=num1-num2-num3
+print(sub_result)
 #Multiplication
-print(num1*num2*num3)
+mul_result=num1*num2*num3
+print(mul_result)
 #Division
-print(num1/num2/num3)
+div_result=(num1/num2)/num3
+print(div_result)
