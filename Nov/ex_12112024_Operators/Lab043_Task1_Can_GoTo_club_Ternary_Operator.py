@@ -11,4 +11,4 @@
 #     print("You can't go to the club")
 # step3-Actual coding
 user_age = int(input("Enter the user age\n"))
-print("Yaay.You can go to the club" if user_age > 18 else "You can't go to the club")
+print("Yaay.You can go to the club" if user_age >=21 else "You can't go to the club")
