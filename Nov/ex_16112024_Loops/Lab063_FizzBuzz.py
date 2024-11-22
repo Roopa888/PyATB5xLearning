@@ -25,8 +25,8 @@ for number in range(1, 101):
     elif number % 5 == 0:
         print("Buzz")
         k += 1
-else:
-    print(number)
+    else:
+        print(number)
 # To know the number of items in each category,printed the below
 print("===============")
 print("No: of FizzBuzz:", i)
