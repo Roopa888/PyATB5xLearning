@@ -1,7 +1,7 @@
 # Create a dictionary from two lists below
 # zip() function in Python combines multiple iterables such as lists, tuples, strings, dict etc, into a single iterator
 keys = ["name", "role", "experience"]
-values = ["Aman", "SDET", 3]
+values = ["Aman", "SDET",3 ] # suppose the numbers are not matching ,only those keys will be there which has a value in the second
 #res = zip(keys, values)
 print(list(zip(keys, values))) # returns an iterator and then we have to convert it to list or dict to print
 my_dict = dict(zip(keys, values))
@@ -13,7 +13,7 @@ dict2={"c":3,"d":4}
 merged_dict=dict1|dict2
 print("The merged dictionary")
 print(merged_dict)
-
+print(merged_dict.get("a"))
 # USing update function
 
 d1={"a":1,"b":2}
