@@ -1,4 +1,4 @@
-# decorators take the function and add soem extra behaviors to it (at start and end of the function
+# decorators take the function and add some extra behaviors to it (at start and end of the function
 # 
 def add_security(func):#func will be replaced by any function name that has the @add_security annotation before it
     def wrapper():
@@ -14,7 +14,7 @@ def add_security(func):#func will be replaced by any function name that has the 
 def driving_scooty():
     print("Normal Function")
     print("I am driving a scooty")
-    # for this function also we can use teh same annotation
+    # for this function also we can use the same annotation
 @ add_security
 def driving_ola_scooter():
     print("Driving Ola Scooter")
