@@ -2,7 +2,7 @@ class MathUtils:
     def add(self, a, b):
         return a + b
 
-    def add(self,a,b=0,c=0,d=0):  # latest signature in function always takes precedence when functions wit same name exists inside a  class
+    def add(self,a,b=0,c=0,d=0):  # latest signature in function always takes precedence when functions with same name exists inside a  class
         return a + b + c+d         # You can acheieve overloading only by providing the def values as in this case,otherwise error
 
 
