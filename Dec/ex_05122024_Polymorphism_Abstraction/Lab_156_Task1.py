@@ -28,9 +28,6 @@ class Storage(ABC):
     def storage_data(self):
         pass
 
-
-class PC():
-
     @staticmethod
     def loadOS():
         print("OS is loading")
