@@ -1,0 +1,2 @@
+Testcase1
+{"firstname":"Susan","lastname":"Ericsson","totalprice":807,"depositpaid":true,"bookingdates":{"checkin":"2023-02-28","checkout":"2023-09-08"},"additionalneeds":"Breakfast"}

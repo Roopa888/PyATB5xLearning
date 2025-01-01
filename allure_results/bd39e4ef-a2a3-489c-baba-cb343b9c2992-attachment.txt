@@ -1,0 +1,2 @@
+Testcase1
+{"firstname":"Susan","lastname":"Wilson","totalprice":891,"depositpaid":false,"bookingdates":{"checkin":"2016-04-05","checkout":"2018-05-09"}}
