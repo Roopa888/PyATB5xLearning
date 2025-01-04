@@ -1,8 +1,8 @@
+from tokenize import cookie_re
+
 import pytest
 import allure
 import requests
-
-from Dec.ex_31122024_Pytest_Request_Module.test_Lab153_Create_Token_POST import headers
 
 # Create Token -POST
 # pipinstall pytest allure requests
@@ -61,3 +61,33 @@ def test_put_request():
     full_url_put=base_url+base_path_put
     print(full_url_put)
     cookie = "token=" + token
+    headers={
+        "Content-Type":"application/json",
+        "Cookie":cookie
+
+    }
+    payload={
+        "firstname": "Pramod",
+        "lastname": "Brown",
+        "totalprice": 111,
+        "depositpaid": True,
+        "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+        },
+        "additionalneeds": "Breakfast"
+    }
+    response_data_5=requests.put(url=full_url_put,headers=headers,json=payload)
+    assert response_data_5.status_code==200
+    assert response_data_5.json()["firstname"]=="Pramod"
+def test_delete():
+    URL="https://restful-booker.herokuapp.com/booking/"
+    booking_id = get_booking_id()
+    DELETEURL=URL+str(booking_id)
+    cookie_value="token="+get_token()
+    headers={
+        "Content-Type":"application/json",
+        "Cookie":cookie_value
+    }
+    response_data=requests.delete(url=DELETEURL,headers=headers)
+    assert response_data.status_code==201
