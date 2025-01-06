@@ -1,4 +1,4 @@
-from tokenize import cookie_re
+
 
 import pytest
 import allure

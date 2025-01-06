@@ -2,11 +2,13 @@
 import pytest
 import allure
 import requests
-base_url="https://restful-booker.herokuapp.com"
-headers={
-    "Content=Type":"application/json"
+base_url = "https://restful-booker.herokuapp.com"
+headers = {
+    "Content=Type": "application/json"
 
 }
+
+
 def get_token():
     base_path_auth = "/auth"
     full_url = base_url + base_path_auth
@@ -22,6 +24,8 @@ def get_token():
     token = response_data_get_token.json()["token"]
     assert len(token) > 0
     return token
+
+
 def create_delete_Booking():
     base_path_create = "/booking"
     full_url = base_url + base_path_create
@@ -53,34 +57,32 @@ def create_delete_Booking():
     assert response_create_json["booking"]["bookingdates"]["checkin"] == "2018-01-01"
     assert response_create_json["booking"]["bookingdates"]["checkout"] == "2019-01-01"
     assert response_create_json["booking"]["additionalneeds"] == "Breakfast"
-    return booking_id
-    del_path="/booking"+str(booking_id)
-    del_url=base_url+update_path
-    cookie="token="+str(get_token())
-    headers_del={
+    del_path = "/booking/" + str(booking_id)
+    del_url = base_url + del_path
+    cookie = "token=" + str(get_token())
+    headers_del = {
         "Content-Type": "application/json",
         "Cookie": cookie
     }
-    response_del_data=requests.delete(url=del_url,headers=headers_del)
-    assert response_del.status_code == 201
+    response_del_data = requests.delete(url=del_url, headers=headers_del)
+    assert response_del_data.status_code == 201
     return booking_id
 
-def test_update_del_booking_id():
-     update_path="/booking/"+str(create_delete_Booking())
-     update_url=base_url+update_path
-     print(update_url)
-     cookie = "token=" + str(get_token())
-     print(cookie)
-     headers_update = {
-         "Content-Type": "application/json",
-         "Cookie": cookie
-     }
-     payload2 = {
-         "firstname": "Nora",
-         "lastname": "Jim"
-     }
-     # Getting 200 as status code but expected is 405
-     response_patch_data = requests.patch(url=update_url, headers=headers_update, json=payload2)
-     assert response_patch_data.status_code == 405
-     assert response_patch_data.text=="Method Not Allowed"
-     print("Update not allowed")
+
+def test_update_del_booking_id(): #patch request
+    update_path = "/booking/" + str(create_delete_Booking())
+    update_url = base_url + update_path
+    print(update_url)
+    cookie = "token=" + str(get_token())
+    print(cookie)
+    headers_update = {
+        "Content-Type": "application/json",
+        "Cookie": cookie
+    }
+    payload2 = {
+        "firstname": "Nora",
+        "lastname": "Jim"
+    }
+    response_patch_data = requests.patch(url=update_url, headers=headers_update, json=payload2)
+    assert response_patch_data.status_code == 405
+    assert response_patch_data.text == "Method Not Allowed"
