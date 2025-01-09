@@ -13,10 +13,7 @@ def method1():
 def test_method2():
     print("Testcase1")
     assert 1 - 1 == 2
-
-    @pytest.mark.regression
-
-
+@pytest.mark.regression
 def test_method3():
     print("Testcase3")
     assert 1 + 1 == 2
