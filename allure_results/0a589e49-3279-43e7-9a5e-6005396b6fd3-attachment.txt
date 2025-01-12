@@ -1,2 +1,0 @@
-Testcase1
-{"firstname":"Susan","lastname":"Ericsson","totalprice":305,"depositpaid":true,"bookingdates":{"checkin":"2024-09-01","checkout":"2024-12-03"}}
