@@ -1,4 +1,4 @@
-# Log into app/vwo.com witha invalid username amd password
+# Log into app/vwo.com with a invalid username amd password
 # Wait for 3 seconds and validate the error message
 import time
 
