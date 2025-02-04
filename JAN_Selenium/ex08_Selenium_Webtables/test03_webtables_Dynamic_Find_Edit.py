@@ -55,7 +55,7 @@ def test_webtables_dynamic():
             time.sleep(5)
             save_button = driver.find_element(By.XPATH, "//button[@type='submit']")
             save_button.click()
-            #actions.move_to_element(save_button).click(on_element=save_button).perform()
+            # actions.move_to_element(save_button).click(on_element=save_button).perform()
             print("Emp status after update")
             print(emp_status.text)
             time.sleep(10)
@@ -67,9 +67,10 @@ def test_webtables_dynamic():
             time.sleep(3)
             assert driver.current_url == "https://awesomeqa.com/hr/web/index.php/pim/viewEmployeeList"
             job_staus_update_xpath = f"{dynamic_path}/following-sibling::div[3]/div"
-            print("Latest xpath",job_staus_update_xpath)
+            print("Latest xpath", job_staus_update_xpath)
             job_staus_update_text = driver.find_element(By.XPATH, job_staus_update_xpath).text
             print(job_staus_update_text)
             assert job_staus_update_text == "Not Joined"
-            print(driver.find_element("//div[@role='table']/div[2]/div[3]/div[1]/div[3]/following-sibling::div[3]/div").text)
+            print(driver.find_element(
+                "//div[@role='table']/div[2]/div[3]/div[1]/div[3]/following-sibling::div[3]/div").text)
             print(f"Success-{data_element.text} has {job_staus_update_text}")

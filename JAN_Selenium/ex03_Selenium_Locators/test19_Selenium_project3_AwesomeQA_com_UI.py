@@ -7,6 +7,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import os
+
+
 @allure.title("Verify the registration functionaity of AWESOME QA site")
 @allure.description("Verify that a registration can be done with the given details on te Awesome QA website")
 def test_awesome_qa():

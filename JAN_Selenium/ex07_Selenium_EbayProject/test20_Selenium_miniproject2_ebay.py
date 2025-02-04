@@ -11,8 +11,10 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+
 @allure.title("Verify the search function of the ebay .com page with macmini in search page-Should return 62 items ")
-@allure.description("TC1-Postive test case-Search for macmini computers in the search box of Ebay.com page and print the titles and prices of all listed items")
+@allure.description(
+    "TC1-Postive test case-Search for macmini computers in the search box of Ebay.com page and print the titles and prices of all listed items")
 def test_ebay_com_page_Chrome():
     driver = webdriver.Chrome()
     driver.get("https://www.ebay.com/b/Desktops-All-In-One-Computers/171957/bn_1643067")

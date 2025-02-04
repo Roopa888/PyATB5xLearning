@@ -30,10 +30,5 @@ def test_app_vwo_login_chrome():
 
     # //a[starts-with(text(),'Make')]
 
-
-
-
-
-
     time.sleep(5)
     driver.quit()  # close everything.
